@@ -1,0 +1,118 @@
+% ------------------------------------------------------------------------
+% type de document
+% ------------------------------------------------------------------------
+\documentclass[11pt, a4paper]{article}
+
+\input{preambule.tex}
+
+
+
+%-------------------------------------------------------------------------
+% définition du titre et auteur ------------------------------------------
+%-------------------------------------------------------------------------
+\title{<++>}
+\author{<++>}
+
+
+
+\begin{document}
+%-------------------------------------------------------------------------
+% page de titre ----------------------------------------------------------
+%-------------------------------------------------------------------------
+\makeatletter
+\begin{titlepage}
+    % centrage et taille police
+  \centering
+
+    % première bande de texte
+  {\large \textsc{<++>}}\\
+  \textsc{<++>}\\
+
+  \vspace{1cm}
+
+    % deuxième bande : les logos
+  \includegraphics[width=3cm]{images/logo.png}
+  \hfill
+  \includegraphics[width=3cm]{images/logo.png}\\
+
+  \vspace{1cm}
+
+    % troisième bande : la date et l'objet
+    % ex : "rapport de tp"
+  {\large \textbf{\@date\\<++>}}\\
+
+  \vfill
+
+    % quatrième bande : titre et auteurs
+  {\LARGE\sffamily \textbf{\@title}}\\
+  \vspace{2em}
+  {\large \@author}\\
+  \vspace{8em}
+    %Référent : Paul Rochet
+
+  \vfill
+
+    % cinquième bande : logos
+  \includegraphics[height=3cm]{images/logo.png}
+  \hfill
+  \includegraphics[height=3cm]{images/logo.png}
+\end{titlepage}
+\makeatother
+
+
+
+%-------------------------------------------------------------------------
+% création du sommaire
+%-------------------------------------------------------------------------
+\renewcommand{\contentsname}{Sommaire}
+{\sffamily \tableofcontents}
+
+
+
+%-------------------------------------------------------------------------
+% corps du rapport
+%-------------------------------------------------------------------------
+\newpage
+\section*{Introduction}
+\label{chap:Introduction}
+\addcontentsline{toc}{section}{Introduction}
+
+
+
+\newpage
+\input{a.tex}
+
+\newpage
+\input{b.tex}
+
+\newpage
+\input{c.tex}
+
+
+
+\newpage
+\section*{Conclusion}
+\label{chap:Conclusion}
+\addcontentsline{toc}{section}{Conclusion}
+
+
+
+%-------------------------------------------------------------------------
+% bibliographie
+%-------------------------------------------------------------------------
+%\newpage
+%\section*{Bibliographie}
+%\label{chap:Références}
+%\addcontentsline{toc}{section}{Références}
+%\bibliographystyle{apalike}
+%\bibliography{bibliographie/refboot.bib}
+
+
+
+%-------------------------------------------------------------------------
+% annexes
+%-------------------------------------------------------------------------
+\appendix
+\newpage
+\input{app.tex}
+\end{document}
