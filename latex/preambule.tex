@@ -1,0 +1,208 @@
+% ------------------------------------------------------------------------
+% packages
+% ------------------------------------------------------------------------
+% encodage et écriture en français
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% police
+\usepackage{lmodern}
+
+% package pour définir des couleurs
+\usepackage[svgnames]{xcolor}
+
+% listes à puces
+\usepackage{enumitem}
+
+% pour faire des simples quote droite
+\usepackage{upquote}
+
+% insertion de code
+\usepackage{listings}
+
+% insertion de texte brut
+\usepackage{verbatim}
+%\usepackage{sverb}
+
+% définition des marges
+\usepackage[top=1.5cm, bottom=1.5cm, left=1.5cm, right=1.5cm]{geometry}
+
+% \layout pour voir où on en est avec les marges
+\usepackage{layout}
+
+% gérer les interlignes
+\usepackage{setspace}
+
+% inclure des images
+\usepackage{graphicx}
+
+% packages symboles divers
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+% insertion théorèmes, preuves, déf...
+\usepackage{amsthm}
+
+% tableaux
+\usepackage{array}
+
+% gestion espaces en fin de commandes sans argument
+\usepackage{xspace}
+
+% pour augmenter la taille des équations
+\usepackage{relsize}
+
+% faire des copier coller dans le pdf (je crois)
+\usepackage{cmap}
+
+% mettre des légendes et labels dans les graphiques
+\usepackage{caption}
+
+% lien hypertextes (vers sites internets)
+\usepackage{hyperref}
+
+% génération de texte en latin
+\usepackage{lipsum}
+
+% écriture en français suite et fin
+\usepackage[frenchb]{babel}
+
+
+
+% ------------------------------------------------------------------------
+% paramètres
+% ------------------------------------------------------------------------
+% hyperref package settings
+\hypersetup{colorlinks=true}
+
+% définition des couleurs
+\definecolor{blue}{RGB}{51,131,255}
+
+% définition des marges
+% \doublespacing
+\onehalfspacing
+
+% options inclusion code
+\lstset{%
+  language=c++,%
+  basicstyle=\scriptsize,%
+  showspaces=false,%
+  showstringspaces=false,%
+  showtabs=false,%
+  numbers=left,%
+  numberstyle=\color{gray},%
+  rulecolor=\color{black},%
+  tabsize=2,%
+%title=\lstname,%
+  commentstyle=\color{gray},%
+  inputencoding=utf8,%
+  literate=%
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1%
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1%
+  {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1%
+  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1%
+  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1%
+  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1%
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1%
+  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1%
+  {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1%
+  {ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1%
+  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1%
+  {€}{{\EUR}}1 {£}{{\pounds}}1%
+}
+
+% espaces entre paragraphes
+\setlength{\parskip}{1em}
+
+
+
+% ------------------------------------------------------------------------
+% macros
+% ------------------------------------------------------------------------
+% raccourcis mathématiques
+\newcommand{\rr}{\ensuremath{\mathbb{R}}\xspace}
+\newcommand{\nn}{\ensuremath{\mathbb{N}}\xspace}
+\newcommand{\cc}{\ensuremath{\mathbb{C}}\xspace}
+\newcommand{\eps}{\ensuremath{\varepsilon}\xspace}
+\newcommand{\xin}{\ensuremath{(X_{i})_{i = 1}^{n}}\xspace}
+\newcommand{\normale}{\ensuremath{\mathcal{N}(0, 1)}\xspace}
+
+% raccourcis de français
+\newcommand{\iid}{indépendantes et identiquement distribuées\xspace}
+\newcommand{\va}{variable aléatoire\xspace}
+\newcommand{\vas}{variables aléatoires\xspace}
+\newcommand{\bs}{bootstrap\xspace}
+\newcommand{\ic}{intervalle de confiance\xspace}
+\newcommand{\esb}{estimateur sans biais\xspace}
+\newcommand{\fdr}{fonction de répartition\xspace}
+\newcommand{\lm}{Lax-Milgram}
+
+
+% macros stat param
+\newcommand{\ee}[1]{\mathbb{E}\left( #1\right)}
+\newcommand{\pp}[1]{\mathbb{P}\left( #1\right)}
+\newcommand{\var}[1]{\mathrm{Var}\left( #1\right)}
+\newcommand{\biais}[1]{\mathrm{biais}\left( #1\right)}
+\newcommand{\ech}[1]{\ensuremath{(#1_{i})_{i = 1}^{n}}\xspace}
+\renewcommand{\hat}{\widehat}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+\renewcommand{\vec}[1]{\ensuremath{\overrightarrow{#1}}}
+\renewcommand{\det}[1]{\mathrm{det}\left(#1\right)}
+
+% environnements
+\newenvironment{v_proof}%
+{\vspace{1em} \itshape \textbf{Démonstration :\\}}%
+{$\square$ \upshape \vspace{2em}}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% sectionnement
+\makeatletter
+\renewcommand{\section}{\@startsection {section}{1}{\z@}%
+  {-3.5ex \@plus -1ex \@minus -.2ex}%
+  {2.3ex \@plus .2ex}%
+{\reset@font\Large\bfseries\color{OrangeRed}\sffamily}}
+
+\renewcommand{\subsection}{\@startsection {subsection}{2}{\z@}%
+  {-3.25ex \@plus -1ex \@minus -.2ex}%
+  {1.5ex \@plus .2ex}%
+{\normalfont\large\bfseries\color{OrangeRed}\sffamily}}
+
+\renewcommand{\subsubsection}{\@startsection {subsubsection}{3}{\z@}%
+  {-3.25ex\@plus -1ex \@minus -.2ex}%
+  {1.5ex \@plus .2ex}%
+{\normalfont\normalsize\bfseries\color{OrangeRed}\sffamily}}
+
+\renewcommand{\paragraph}{\@startsection {paragraph}{4}{\z@}%
+  {3.25ex \@plus 1ex \@minus .2ex}%
+  {-1em}%
+{\normalfont\normalsize\bfseries\sffamily}}
+
+\renewcommand{\subparagraph}{\@startsection {subparagraph}{5}{\parindent}%
+  {3.25ex \@plus 1ex \@minus .2ex}%
+  {-1em}%
+{\normalfont\normalsize \bfseries\sffamily}}
+\makeatother
+
+
+
+\theoremstyle{remark}
+\newtheorem{remark}{Remarque}
+\newtheorem{example}{Exemple}
+\newtheorem{perspectives}{Perspectives}
+\newtheorem{exercise}{Exercice}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Définition}[section]
+
+\theoremstyle{plain}
+\newtheorem{proposition}[definition]{Proposition}
+\newtheorem{property}[definition]{Propriété}
+\newtheorem{theorem}[definition]{Théorème}
+\newtheorem{corollary}[definition]{Corollaire}
+\newtheorem{lemma}[definition]{Lemme}
+
+\renewcommand{\qedsymbol}{$\square$}
